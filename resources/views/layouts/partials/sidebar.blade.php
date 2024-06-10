@@ -1,12 +1,12 @@
 <div
-class="bg-[#5AB2FF] left-0 min-w-[300px] min-h-screen fixed"
-x-show="open"
-x-transition:enter="transition-transform transform ease-out duration-300"
-x-transition:enter-start="-translate-x-full"
-x-transition:enter-end="translate-x-0"
-x-transition:leave="transition-transform transform ease-in duration-300"
-x-transition:leave-start="translate-x-0"
-x-transition:leave-end="-translate-x-full"
+    class="bg-[#5AB2FF] left-0 min-w-[300px] min-h-screen fixed"
+    x-show="open"
+    x-transition:enter="transition-transform transform ease-out duration-300"
+    x-transition:enter-start="-translate-x-full"
+    x-transition:enter-end="translate-x-0"
+    x-transition:leave="transition-transform transform ease-in duration-300"
+    x-transition:leave-start="translate-x-0"
+    x-transition:leave-end="-translate-x-full"
 >
 <ul class="p-5 text-white font-semibold">
     <a href="{{ route('dashboard')}}">
@@ -19,6 +19,7 @@ x-transition:leave-end="-translate-x-full"
             </div>
         </li>
     </a>
+    @if (Auth::user()->role == 'sales')
     <a href="{{ route('sales.index')}}">
         <li class="py-1">
             <div class="@if(Request::routeIs('sales.index')) bg-white text-[#5AB2FF] @endif flex items-center px-4 py-2 transition-color duration-300 hover:bg-white hover:text-[#5AB2FF] rounded-xl">
@@ -29,6 +30,7 @@ x-transition:leave-end="-translate-x-full"
             </div>
         </li>
     </a>
+    @else
     <a href="{{ route('user.index')}}">
         <li class="py-1">
             <div class="@if(Request::routeIs('user.index')) bg-white text-[#5AB2FF] @endif flex items-center px-4 py-2 transition-color duration-300 hover:bg-white hover:text-[#5AB2FF] rounded-xl">
@@ -49,5 +51,6 @@ x-transition:leave-end="-translate-x-full"
             </div>
         </li>
     </a>
+    @endif
 </ul>
 </div>
