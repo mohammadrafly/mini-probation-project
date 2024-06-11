@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite('resources/css/app.css')
 </head>
-<body class="bg-orange-400 min-h-screen flex justify-center items-center">
+<body class="bg-sky-500 min-h-screen flex justify-center items-center">
     @yield('content')
 </body>
 </html>
